@@ -9,3 +9,4 @@ dependencyResolutionManagement {
 rootProject.name = "Medium_JetpackCompose"
 include ':app'
 include ':multi_selector'
+include ':resource'

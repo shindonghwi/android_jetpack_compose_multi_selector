@@ -10,7 +10,3 @@ apply from: '../dependency.gradle'
 android {
     compileSdk BuildBaseConfig.compileVersion
 }
-
-dependencies {
-    api project(':resource')
-}
