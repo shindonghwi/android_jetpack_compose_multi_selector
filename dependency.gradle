@@ -38,6 +38,24 @@ dependencies {
     api 'androidx.activity:activity-compose:1.4.0'
 
     api "androidx.compose.ui:ui:${BuildBaseConfig.composeVersion}"
+    api "androidx.compose.ui:ui-tooling:${BuildBaseConfig.composeVersion}"
+    api "androidx.compose.runtime:runtime:${BuildBaseConfig.composeVersion}"
+    api "androidx.compose.foundation:foundation-layout:${BuildBaseConfig.composeVersion}"
+    api "androidx.compose.material:material-icons-core:${BuildBaseConfig.composeVersion}"
+    api "androidx.compose.material:material-icons-extended:${BuildBaseConfig.composeVersion}"
+    api "androidx.compose.foundation:foundation:${BuildBaseConfig.composeVersion}"
+    api "androidx.compose.animation:animation:${BuildBaseConfig.composeVersion}"
+    api "androidx.compose.runtime:runtime-livedata:${BuildBaseConfig.composeVersion}"
+    api "androidx.compose.runtime:runtime-rxjava2:${BuildBaseConfig.composeVersion}"
     api "androidx.compose.material:material:${BuildBaseConfig.composeVersion}"
     api "androidx.compose.ui:ui-tooling-preview:${BuildBaseConfig.composeVersion}"
+
+    api "androidx.constraintlayout:constraintlayout-compose:${BuildBaseConfig.composeConstraint}"
+    api "io.coil-kt:coil-compose:${BuildBaseConfig.composeCoil}"
+    api "com.google.accompanist:accompanist-pager:${BuildBaseConfig.composeViewPager}"
+    api "com.google.accompanist:accompanist-pager-indicators:${BuildBaseConfig.composeViewPager}"
+    api "androidx.compose.ui:ui-viewbinding:${BuildBaseConfig.composeViewBinding}"
+    api "androidx.compose.ui:ui-util:${BuildBaseConfig.composeViewBinding}"
+    api "androidx.activity:activity-compose:${BuildBaseConfig.composeActivity}"
+    api "com.google.accompanist:accompanist-swiperefresh:${BuildBaseConfig.composeSwipeRefresh}"
 }
