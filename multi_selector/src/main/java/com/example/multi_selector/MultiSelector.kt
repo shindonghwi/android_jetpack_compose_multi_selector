@@ -33,37 +33,41 @@ fun MultiSelector() {
 
 @Composable
 private fun MultiSelectView() {
-
     val config = LocalConfiguration.current
 
-    var typeList by remember {
+    var musicList by remember {
         mutableStateOf(
             (1..15).map {
                 MusicDTO(
-                    R.drawable.img_music,
-                    "${it}번째 노래제목 ",
-                    "${it}번째 컨텐츠 ",
-                    mutableStateOf(true)
+                    image = R.drawable.img_music,
+                    title = "${it}번째 노래제목 ",
+                    explain = "${it}번째 컨텐츠 ",
+                    isSelected = mutableStateOf(true)
                 )
             }
         )
-    }
+    } // 총 15개의 dummy data를 만들어준다.
 
     LazyColumn(modifier = Modifier.padding(top = 48.dp)) {
-
-        items(typeList.size) { index ->
+        items(musicList.size) { index ->
             ConstraintLayout(modifier = Modifier
                 .padding(bottom = 16.dp)
                 .fillMaxWidth()
                 .height((config.screenWidthDp.dp - 40.dp) * 0.37f)
                 .clip(RoundedCornerShape(8.dp))
-                .border(1.dp, if (typeList[index].isSelected.value) Primary500 else Outline60, RoundedCornerShape(8.dp))
+                .border(1.dp, if (musicList[index].isSelected.value) Primary500 else Outline60, RoundedCornerShape(8.dp))
                 .clickable {
-                    typeList = typeList.mapIndexed { mapIndex, trainerRegisterTypeDTO ->
+
+                    /**
+                    현재 렌더링 된 아이템과, 선택한 아이템의 포지션이 같을 경우에 선택상태를 뒤집는다.
+                    그렇지 않으면 현재 아이템을 반환한다.
+                     */
+
+                    musicList = musicList.mapIndexed { mapIndex, musicDTO ->
                         if (index == mapIndex) {
-                            trainerRegisterTypeDTO.copy(isSelected = mutableStateOf(!trainerRegisterTypeDTO.isSelected.value))
+                            musicDTO.copy(isSelected = mutableStateOf(!musicDTO.isSelected.value))
                         } else {
-                            trainerRegisterTypeDTO
+                            musicDTO
                         }
                     }
                 },
@@ -101,27 +105,27 @@ private fun MultiSelectView() {
                         .layoutId("image")
                         .size(80.dp)
                         .clip(RoundedCornerShape(20.dp)),
-                    painter = painterResource(id = typeList[index].image),
+                    painter = painterResource(id = musicList[index].image),
                     tint = Color.Unspecified,
                     contentDescription = "image"
                 )
 
                 Text(
                     modifier = Modifier.layoutId("title"),
-                    text = typeList[index].title,
+                    text = musicList[index].title,
                     style = MaterialTheme.typography.subtitle1,
                     color = Gray800
                 )
 
                 Text(
                     modifier = Modifier.layoutId("explain"),
-                    text = typeList[index].explain,
+                    text = musicList[index].explain,
                     style = MaterialTheme.typography.caption,
                     color = Gray600
                 )
                 Checkbox(
                     modifier = Modifier.layoutId("checkBox"),
-                    checked = typeList[index].isSelected.value,
+                    checked = musicList[index].isSelected.value,
                     onCheckedChange = null
                 )
             }
