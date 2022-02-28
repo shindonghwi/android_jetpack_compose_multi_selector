@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/multi_selector" />
+            <option value="$PROJECT_DIR$/nestedscroll_tablayout" />
             <option value="$PROJECT_DIR$/resource" />
           </set>
         </option>

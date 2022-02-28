@@ -1,0 +1,16 @@
+import base.BuildBaseConfig
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+apply from: '../dependency.gradle'
+
+android {
+    compileSdk BuildBaseConfig.compileVersion
+}
+
+dependencies {
+    api project(':resource')
+}
