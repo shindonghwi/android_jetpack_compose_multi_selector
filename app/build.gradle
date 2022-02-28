@@ -50,5 +50,6 @@ android {
 }
 
 dependencies {
-    implementation project(':multi_selector')
+//    implementation project(':multi_selector')
+    implementation project(':nestedscroll_tablayout')
 }
